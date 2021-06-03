@@ -3,6 +3,10 @@
   max-width: inherit;
 }
 
+.project-details-repoUrl, .project-details-repoUrl:hover {
+  color: var(--markdown-link-color);
+}
+
 .releases-subtitle {
   display: flex;
   flex-direction: column;
@@ -10,4 +14,12 @@
 
 .releases-markdown {
   width: inherit;
+}
+
+.fa-code-fork-custom.left {
+
+}
+
+.fa-code-fork-custom.right {
+  transform: translateX(-6px);
 }
