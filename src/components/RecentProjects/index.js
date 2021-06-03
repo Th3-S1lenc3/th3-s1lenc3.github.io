@@ -6,8 +6,6 @@ import RepoCard from '@components/RepoCard';
 
 import clean from '@utilities/clean';
 
-import './index.css';
-
 export default function RecentProjects() {
   const [recentProjects, setRecentProjects] = useState([]);
   const [loading, setLoading] = useState(true);

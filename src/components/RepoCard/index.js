@@ -1,13 +1,69 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import moment from 'moment';
-import { Card } from 'react-bootstrap';
+import {
+  Card,
+  Badge,
+  OverlayTrigger,
+  Tooltip
+} from 'react-bootstrap';
+import classNames from 'classnames';
+
+import './index.css';
 
 export default function RepoCard(props) {
-
   if (!props.repo) {
-    throw new Error('RepoCard requires repo attribute')
+    throw new Error('RepoCard requires repo attribute');
+    return;
   }
+
+  const [tags, setTags] = useState([]);
+
+  useEffect(() => {
+    const data = props.repo;
+    const { url } = data;
+
+    const getTags = async () => {
+      const { data: { names: tags } } = await axios({
+        url: `${url}/topics`,
+        headers: {
+          'Accept': 'application/vnd.github.mercy-preview+json',
+        },
+      });
+
+      setTags(tags);
+    }
+
+    getTags();
+  }, [props.repo]);
+
+  const ProjectBadges = () => {
+    if (tagsFormated && tagsFormated.length > 0) {
+      return (
+        <div className="project-badges">
+          { tagsFormated ?? '' }
+        </div>
+      )
+    }
+    else {
+      return <></>
+    }
+  }
+
+  const OverlayTooltip = ({ children, tooltip }) => (
+    <OverlayTrigger
+      placement="bottom"
+      delay={{ show: 250, hide: 400 }}
+      overlay={
+        <Tooltip>
+          Topic: {tooltip}
+        </Tooltip>
+      }
+    >
+      {children}
+    </OverlayTrigger>
+  );
 
   const {
     name,
@@ -16,6 +72,25 @@ export default function RepoCard(props) {
     updated_at,
     license,
   } = props.repo;
+
+  let tagsFormated = null;
+
+  if (tags && tags.map && tags.length > 0) {
+    tagsFormated = tags.map((tag, index) => (
+      <OverlayTooltip
+        tooltip={tag}
+      >
+        <Badge
+          key={index}
+          pill
+          variant="primary"
+          className="project-badge mx-1"
+        >
+          {tag}
+        </Badge>
+      </OverlayTooltip>
+    ));
+  }
 
   let createdAt = 'Unable to get creation date.';
   let updatedAt = 'Unable to get last comit date.';
@@ -38,6 +113,7 @@ export default function RepoCard(props) {
           <Card.Text className="project-description">
             {description ?? 'No Description'}
           </Card.Text>
+          <ProjectBadges />
         </Card.Body>
         <Card.Footer className="project-footer">
           <span className="project-created_at mr-2">

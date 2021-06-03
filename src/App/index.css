@@ -6,6 +6,10 @@
   --navbar-height: 4rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .page {
   margin-top: var(--navbar-height);
 }
