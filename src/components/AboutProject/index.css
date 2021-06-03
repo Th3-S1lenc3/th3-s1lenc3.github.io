@@ -1,0 +1,13 @@
+.project-details-about {
+  text-align: left;
+  max-width: inherit;
+}
+
+.releases-subtitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.releases-markdown {
+  width: inherit;
+}

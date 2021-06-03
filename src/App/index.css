@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+:root {
+  --navbar-height: 4rem;
+}
+
+.page {
+  margin-top: var(--navbar-height);
+}
+
+.page-centre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

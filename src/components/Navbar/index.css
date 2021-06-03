@@ -1,0 +1,25 @@
+.navbar {
+  max-height: var(--navbar-height);
+}
+
+:root {
+  --logo-size: calc(var(--navbar-height) - 1rem);
+}
+
+.logo {
+  font-size: var(--logo-size);
+}
+
+.logo-brand {
+  border-radius: 50%;
+  transform: translateY(8px);
+}
+
+.logo-wrapper {
+  width: var(--logo-size);
+  height: var(--logo-size);
+  border-radius: 50%;
+  background-color: #000;
+  overflow: hidden;
+  color: #444;
+}

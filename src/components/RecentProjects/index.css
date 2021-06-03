@@ -1,0 +1,18 @@
+.project {
+  text-align: left;
+}
+
+.project-details {
+  color: unset;
+  text-decoration: none;
+}
+
+.project-details:hover {
+  color: unset;
+  text-decoration: none;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: flex-start;
+}
