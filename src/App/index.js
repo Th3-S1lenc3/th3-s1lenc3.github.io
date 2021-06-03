@@ -6,7 +6,7 @@ import Navbar from '@components/Navbar';
 import Home from '@pages/Home';
 import Projects from '@pages/Projects';
 import ProjectDetails from '@pages/ProjectDetails';
-
+import About from '@pages/About';
 
 import PageNotFound from '@pages/PageNotFound';
 
@@ -21,6 +21,7 @@ export default function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/projects/:repo" component={ProjectDetails} />
+          <Route exact path="/about" component={About} />
           <Route path="/" component={PageNotFound} />
         </Switch>
       </Router>
