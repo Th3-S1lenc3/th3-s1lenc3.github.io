@@ -15,7 +15,7 @@ export default function RecentProjects() {
   useEffect(() => {
     const getRepos = async () => {
       const { data } = await axios({
-        url: 'https://api.github.com/users/Th3-S1lenc3/repos',
+        url: 'https://api.github.com/users/Th3-S1lenc3/repos?sort=updated&direction=desc',
         headers: {
           'Accept': 'application/vnd.github.v3+json'
         },
