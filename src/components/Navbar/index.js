@@ -7,6 +7,7 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import './index.css';
+import { ReactComponent as Logo } from './logo.svg';
 
 function Navbar(props) {
   const { pathname } = props.location;
@@ -22,7 +23,7 @@ function Navbar(props) {
       <NavBar.Brand>
         <Link to='/'>
           <div className="logo-wrapper mx-1">
-            <FontAwesomeIcon className="logo logo-brand" icon={faUserSecret} />
+            <Logo className="logo-brand" />
           </div>
         </Link>
       </NavBar.Brand>

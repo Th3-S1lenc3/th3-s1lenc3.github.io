@@ -11,15 +11,13 @@
 }
 
 .logo-brand {
-  border-radius: 50%;
-  transform: translateY(8px);
+  width: var(--logo-size);
+  height: var(--logo-size);
 }
 
 .logo-wrapper {
   width: var(--logo-size);
   height: var(--logo-size);
   border-radius: 50%;
-  background-color: #000;
   overflow: hidden;
-  color: #444;
 }
