@@ -15,7 +15,7 @@ import PageNotFound from '@pages/PageNotFound';
 import './index.css';
 
 export default function App() {
-  const showDev = false;
+  const showDev = true;
 
   const devShown = classNames({
     'mt-nav': !showDev,
