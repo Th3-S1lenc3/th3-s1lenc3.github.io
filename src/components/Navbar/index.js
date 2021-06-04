@@ -18,6 +18,18 @@ function Navbar(props) {
     activeKey = '/';
   }
 
+  const AboutLink = () => (
+    <Link to='/about' className="nav-link">
+      <Nav.Link
+        as="span"
+        bsPrefix=''
+        eventKey='about'
+      >
+        About
+      </Nav.Link>
+    </Link>
+  )
+
   return (
     <NavBar variant="dark" bg="dark" expand="lg" fixed="top">
       <NavBar.Brand>
@@ -46,15 +58,6 @@ function Navbar(props) {
               eventKey='projects'
             >
               Projects
-            </Nav.Link>
-          </Link>
-          <Link to='/about' className="nav-link">
-            <Nav.Link
-              as="span"
-              bsPrefix=''
-              eventKey='about'
-            >
-              About
             </Nav.Link>
           </Link>
         </Nav>

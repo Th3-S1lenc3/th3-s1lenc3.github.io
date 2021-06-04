@@ -21,6 +21,14 @@ export default function App() {
     'mt-nav': !showDev,
   });
 
+  const AboutRoute = () => (
+    <Route
+      exact
+      path="/about"
+      render={(props) => <About className={devShown} {...props} />}
+    />
+  );
+
   return (
     <div className="App">
       <Router>
@@ -41,11 +49,6 @@ export default function App() {
             exact
             path="/projects/:repo"
             render={(props) => <ProjectDetails className={devShown} {...props} />}
-          />
-          <Route
-            exact
-            path="/about"
-            render={(props) => <About className={devShown} {...props} />}
           />
           <Route
             path="/"
