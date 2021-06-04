@@ -114,6 +114,7 @@ export default function AboutProject(props) {
                   <a
                     href={html_url}
                     target="_blank"
+                    rel="noreferrer"
                     style={{color: 'var(--markdown-link-color)'}}
                   >
                     Assets
@@ -245,7 +246,12 @@ export default function AboutProject(props) {
     <div className='project-details-about border border-secondary rounded my-2 p-4'>
       <h3>
         Project:
-        <a href={htmlUrl} className="project-details-repoUrl ml-1">
+        <a
+          href={htmlUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="project-details-repoUrl ml-1"
+        >
           {name}
         </a>
       </h3>

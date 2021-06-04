@@ -5,7 +5,8 @@ import RenderMarkdown from '@components/RenderMarkdown';
 
 import AboutMarkdown from './about.md';
 
-export default function About() {
+export default function About(props) {
+  const { className } = props;
   const [markdown, setMarkdown] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -19,10 +20,10 @@ export default function About() {
     getMarkdown();
   }, []);
 
-  if (loading) return <div className="page">Fetching My Information...</div>
+  if (loading) return <div className={`page ${className}`}>Fetching My Information...</div>
 
   return (
-    <div className="page p-2">
+    <div className={`page p-2 ${className}`}>
       <RenderMarkdown source={markdown} />
     </div>
   )

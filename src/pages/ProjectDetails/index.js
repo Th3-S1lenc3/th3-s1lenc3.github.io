@@ -8,6 +8,7 @@ import AboutProject from '@components/AboutProject';
 import './index.css';
 
 export default function ProjectDetails(props) {
+  const { className } = props;
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState({});
   const [readMe, setReadMe] = useState('');
@@ -47,10 +48,10 @@ export default function ProjectDetails(props) {
     getRepo();
   }, [props.match.params])
 
-  if (loading) return <div className="page">Fetching Repository Details...</div>
+  if (loading) return <div className={`page ${className}`}>Fetching Repository Details...</div>
 
   return (
-    <div className="page page-centre">
+    <div className={`page page-centre ${className}`}>
       <Row className="project-details-page">
         <Col className="border border-secondary rounded my-2 p-4">
           <RenderMarkdown source={readMe} />

@@ -8,14 +8,12 @@ import {
   OverlayTrigger,
   Tooltip
 } from 'react-bootstrap';
-import classNames from 'classnames';
 
 import './index.css';
 
 export default function RepoCard(props) {
   if (!props.repo) {
     throw new Error('RepoCard requires repo attribute');
-    return;
   }
 
   const [tags, setTags] = useState([]);
@@ -41,7 +39,7 @@ export default function RepoCard(props) {
   const ProjectBadges = () => {
     if (tagsFormated && tagsFormated.length > 0) {
       return (
-        <div className="project-badges">
+        <div key={100} className="project-badges">
           { tagsFormated ?? '' }
         </div>
       )

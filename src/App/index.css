@@ -10,8 +10,13 @@
   display: none;
 }
 
-.page {
+.mt-nav {
   margin-top: var(--navbar-height);
+}
+
+.mt-nav.alert {
+  margin-bottom: unset;
+  border-radius: unset;
 }
 
 .page-centre {
