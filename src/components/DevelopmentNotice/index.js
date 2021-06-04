@@ -11,6 +11,8 @@ export default function DevelopmentNotice(props) {
         any bugs or inconsitencies. Please report them{' '}
         <Alert.Link
           href="https://github.com/Th3-S1lenc3/th3-s1lenc3.github.io/issues"
+          target="_blank"
+          rel="noreferrer"
         >
           here
         </Alert.Link>

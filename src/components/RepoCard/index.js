@@ -77,6 +77,7 @@ export default function RepoCard(props) {
     tagsFormated = tags.map((tag, index) => (
       <OverlayTooltip
         tooltip={tag}
+        key={index}
       >
         <Badge
           key={index}
