@@ -1,15 +1,18 @@
 {
   "name": "th3-s1lenc3.github.io",
   "private": true,
-  "version": "0.0.1",
+  "version": "2.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+    "gh-pages": "^3.2.3",
     "sass": "^1.49.9",
     "svelte": "^3.46.4",
     "svelte-preprocess": "^4.10.4",
