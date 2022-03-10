@@ -16,7 +16,7 @@
 </style>
 
 <header>
-
+  <Navbar {pages} />
 </header>
 
 <main class="flex-1">
