@@ -1,4 +1,16 @@
+<script context="module">
+  export async function load({ url }) {
+    return {
+      props: {
+        currentRoute: url.pathname,
+      },
+    }
+  }
+</script>
+
 <script>
+  export let currentRoute;
+
   import Navbar from "@components/Navbar.svelte";
 </script>
 
@@ -17,7 +29,7 @@
 </svelte:head>
 
 <header>
-  <Navbar />
+  <Navbar {currentRoute} />
 </header>
 
 <main class="flex-1">
