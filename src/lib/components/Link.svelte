@@ -2,7 +2,6 @@
   export let to;
   export let active;
 
-  const activeClasses = "text-dark dark:text-white"
 </script>
 
 <style lang="scss">
@@ -11,6 +10,6 @@
   }
 </style>
 
-<a href={to} class={`link ${$$props.class || ''} ${active === true ? activeClasses : 'text-gray-600 dark:text-navlink'}`}>
+<a href={to} class={`link ${$$props.class || ''} ${active === true ? 'text-white' : 'text-navlink'}`}>
   <slot />
 </a>
