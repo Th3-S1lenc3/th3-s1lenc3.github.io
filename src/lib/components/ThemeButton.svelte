@@ -33,8 +33,8 @@
 
 <button on:click={toggleTheme}>
   {#if theme === "dark"}
-    <i class="bi bi-sun" />
+    <i class="fa-solid fa-2x fa-sun" />
   {:else}
-    <i class="bi bi-moon" />
+    <i class="fa-solid fa-2x fa-moon" />
   {/if}
 </button>
