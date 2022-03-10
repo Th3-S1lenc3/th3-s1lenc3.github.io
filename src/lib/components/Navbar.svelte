@@ -1,12 +1,58 @@
 <script>
+  export let currentRoute;
+
   import Link from '@components/Link.svelte';
   import ThemeButton from '@components/ThemeButton.svelte';
+
+  import { beforeNavigate } from '$app/navigation';
+  import { onMount } from "svelte";
+
+  let links = [
+    {
+      path: '/',
+      name: 'Home',
+      active: false,
+    },
+    {
+      path: '/projects',
+      name: 'Project',
+      active: false,
+    }
+  ];
+
+  onMount(() => {
+    links = links.map(el => {
+      if (el.path === currentRoute) {
+        el.active = true;
+      } else {
+        el.active = false;
+      }
+
+      return el;
+    });
+  });
+
+  beforeNavigate(({ to }) => {
+    if (to != null) {
+      const path = to.pathname;
+
+      links = links.map(el => {
+        if (el.path === path) {
+          el.active = true;
+        } else {
+          el.active = false;
+        }
+
+        return el;
+      });
+    }
+  });
 </script>
 
 <style lang="scss">
 </style>
 
-<nav class="border-b border-gray-500/50 dark:border-gray-600/50 px-2 sm:px-4 py-2.5 w-screen h-20">
+<nav class="bg-dark px-2 sm:px-4 py-2.5 w-screen h-20">
   <div class="container-fluid flex flex-row justify-start items-center">
     <Link to='/' class="flex items-centre">
       <img src="/logo.svg" class="mr-3 h-6 sm:h-16" alt="Th3-S1lenc3 Logo" />
@@ -18,16 +64,13 @@
     <div class="hidden w-full md:block" id="mobile-menu">
       <div class="flex flex-col md:flex-row mt-4 md:space-x-8 md:mt-0 md:text-sm md:font-medium justify-between">
         <ul class="flex flex-col md:flex-row">
-          <li class="mr-2">
-            <Link to='/'>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to='/projects'>
-              Projects
-            </Link>
-          </li>
+          {#each links as link, i}
+            <li class="mr-2">
+              <Link to={link.path} active={link.active}>
+                {link.name}
+              </Link>
+            </li>
+          {/each}
         </ul>
         <ul class="flex flex-col md:flex-row">
           <ThemeButton />

@@ -15,6 +15,7 @@ module.exports = {
         danger: colors.red['600'],
         light: '#7b8a8b',
         dark: '#303030',
+        navlink: '#fff9',
         gray: {
           900: '#202225',
           800: '#2f3136',
