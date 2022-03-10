@@ -1,4 +1,5 @@
 <script>
+  import Navbar from "@components/Navbar.svelte";
 </script>
 
 <style lang="scss" global>
@@ -16,7 +17,7 @@
 </style>
 
 <header>
-  <Navbar {pages} />
+  <Navbar />
 </header>
 
 <main class="flex-1">

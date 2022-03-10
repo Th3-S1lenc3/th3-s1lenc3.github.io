@@ -1,8 +1,4 @@
 <script>
-  export let pages;
-
-  console.log(pages);
-
   import Link from '@components/Link.svelte';
   import ThemeButton from '@components/ThemeButton.svelte';
 </script>
