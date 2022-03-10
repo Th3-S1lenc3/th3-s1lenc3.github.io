@@ -7,14 +7,14 @@
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-
-  $fa-font-path: "/fonts"
-
-  @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-  @import "~@fortawesome/fontawesome-free/scss/brands.scss";
-  @import "~@fortawesome/fontawesome-free/scss/regular.scss";
-  @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 </style>
+
+<svelte:head>
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/brands.min.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/solid.min.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/regular.min.css">
+</svelte:head>
 
 <header>
   <Navbar />
