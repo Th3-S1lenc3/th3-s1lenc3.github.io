@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   let theme = "light";
 
   import { browser } from "$app/env";
